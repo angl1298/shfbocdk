@@ -30,3 +30,19 @@ void insertionSort(int arr[], int n) {
         arr[j + 1] = key;
     }
 }
+## 3. Алгоритм сортування вибором
+Алгоритм сортування вибором шукає найменший елемент у масиві і обмінює його з першим елементом. Потім він шукає другий найменший елемент і обмінює його з другим елементом, і так далі.
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
+        }
+        // Обмін елементів
+        int temp = arr[i];
+        arr[i] = arr[minIdx];
+        arr[minIdx] = temp;
+    }
+}
